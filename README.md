@@ -1,10 +1,10 @@
 ## Demo
 
-![scroll-x](https://ibb.co/L1zVVwY)
-![scroll](https://ibb.co/y01nKX0)
-![tab](https://ibb.co/vm9cG7n)
-![fog-color](https://ibb.co/x1bYKLj)
-![fog-range](https://ibb.co/tMVWy0w)
+![scroll-x](https://i.ibb.co/rHGDDPF/scroll-x.gif)
+![scroll](https://i.ibb.co/WnwW76n/scroll.gif)
+![tab](https://i.ibb.co/92PpLF5/tab.gif)
+![fog-color](https://i.ibb.co/zXgFWxR/fog-color.png)
+![fog-range](https://i.ibb.co/6Rjf6Kc/fog-range.png)
 
 ## Project
 
