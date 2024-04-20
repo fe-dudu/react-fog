@@ -3,7 +3,7 @@
 ![scroll-x](https://i.ibb.co/rHGDDPF/scroll-x.gif)
 ![scroll](https://i.ibb.co/WnwW76n/scroll.gif)
 ![tab](https://i.ibb.co/92PpLF5/tab.gif)
-![fog-color](https://i.ibb.co/zXgFWxR/fog-color.png)
+![fog-color](https://i.ibb.co/n8dXLLX/fog-color-change.png)
 ![fog-range](https://i.ibb.co/6Rjf6Kc/fog-range.png)
 
 ## Project
