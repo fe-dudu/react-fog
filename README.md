@@ -1,9 +1,10 @@
 ## Demo
 
-![scroll-x](./images/scroll-x.gif)
-![scroll](./images/scroll.gif)
-![fog-color](./images/fog-color.png)
-![fog-range](./images/fog-range.png)
+![scroll-x](https://ibb.co/L1zVVwY)
+![scroll](https://ibb.co/y01nKX0)
+![tab](https://ibb.co/vm9cG7n)
+![fog-color](https://ibb.co/x1bYKLj)
+![fog-range](https://ibb.co/tMVWy0w)
 
 ## Project
 
@@ -92,19 +93,38 @@ const FogTable = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {_.range(0, 15).map((i) => (
+          {_.range(0, 10).map((i) => (
             <TableRow key={`row-${i}`}>
-              <TableCell width={200}>table body {i}-1</TableCell>
-              <TableCell width={200}>table body {i}-2</TableCell>
-              <TableCell width={200}>table body {i}-3</TableCell>
-              <TableCell width={200}>table body {i}-4</TableCell>
-              <TableCell width={200}>table body {i}-5</TableCell>
-              <TableCell width={200}>table body {i}-6</TableCell>
-              <TableCell width={200}>table body {i}-7</TableCell>
+              <TableCell width={200}>table cell {i}-1</TableCell>
+              <TableCell width={200}>table cell {i}-2</TableCell>
+              <TableCell width={200}>table cell {i}-3</TableCell>
+              <TableCell width={200}>table cell {i}-4</TableCell>
+              <TableCell width={200}>table cell {i}-5</TableCell>
+              <TableCell width={200}>table cell {i}-6</TableCell>
+              <TableCell width={200}>table cell {i}-7</TableCell>
             </TableRow>
           ))}
         </TableBody>
       </Table>
+    </Fog>
+  )
+};
+```
+
+## Usage 6 - MUi Chip example
+```
+import Fog from 'react-fog';
+import { Chip, Box } from "@mui/material";
+import _ from "lodash";
+
+const FogTable = () => {
+  return (
+    <Fog fogColor="#eee" fogRange={10}>
+      <Box display="flex" gap={2}>
+        {_.range(0, 10).map((i) => (
+          <Chip color="info" key={i} label={`label-${i}`} />
+        ))}
+      </Box>
     </Fog>
   )
 };

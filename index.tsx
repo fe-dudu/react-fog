@@ -1,6 +1,7 @@
 "use client";
 
 import { HTMLAttributes, PropsWithChildren, useEffect, useRef, useState } from "react";
+import "./styles.css"; 
 
 interface FogEffectProps extends HTMLAttributes<HTMLDivElement> {
   width: string;
@@ -84,15 +85,47 @@ const Fog: React.FC<FogProps> = ({ fogRange = 7, fogColor, height, children }) =
   }, [el]);
 
   return (
-    <div style={{ position: "relative" }}>
-      {!isTop && <FogEffect width="100%" height={`${fogRange}px`} top={0} fogColor={fogColor} />}
-      {!isBottom && <FogEffect width="100%" height={`${fogRange}px`} bottom={0} fogColor={fogColor} />}
-      {!isLeft && <FogEffect width={`${fogRange}px`} height="100%" left={0} fogColor={fogColor} />}
-      {!isRight && <FogEffect width={`${fogRange}px`} height="100%" right={0} fogColor={fogColor} />}
-      <div ref={ref} style={{ overflow: "auto", width: "100%", height: height }}>
-        {children}
+      <div className="fog-wrapper" style={{ position: "relative" }}>
+          {!isTop && (
+              <FogEffect
+                  className="fog-effect-top"
+                  width="100%"
+                  height={`${fogRange}px`}
+                  top={0}
+                  fogColor={fogColor}
+              />
+          )}
+          {!isBottom && (
+              <FogEffect
+                  className="fog-effect-bottom"
+                  width="100%"
+                  height={`${fogRange}px`}
+                  bottom={0}
+                  fogColor={fogColor}
+              />
+          )}
+          {!isLeft && (
+              <FogEffect
+                  className="fog-effect-left"
+                  width={`${fogRange}px`}
+                  height="100%"
+                  left={0}
+                  fogColor={fogColor}
+              />
+          )}
+          {!isRight && (
+              <FogEffect
+                  className="fog-effect-right"
+                  width={`${fogRange}px`}
+                  height="100%"
+                  right={0}
+                  fogColor={fogColor}
+              />
+          )}
+          <div className="fog-children" ref={ref} style={{ overflow: "auto", width: "100%", height: height, scrollbarWidth: "none" }}>
+              {children}
+          </div>
       </div>
-    </div>
   );
 };
 
