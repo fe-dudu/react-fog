@@ -1,7 +1,7 @@
 "use client";
 
 import { HTMLAttributes, PropsWithChildren, useEffect, useRef, useState } from "react";
-import "./styles.css"; 
+import styled from "@emotion/styled";
 
 interface FogEffectProps extends HTMLAttributes<HTMLDivElement> {
   width: string;
@@ -46,6 +46,12 @@ const FogEffect: React.FC<FogEffectProps> = ({
     />
   );
 };
+
+const FogChildrenWrapper = styled.div`
+    .fog-children::-webkit-scrollbar {
+        display: none;
+    }
+`;
 
 interface FogProps extends PropsWithChildren {
   fogRange?: number;
@@ -122,9 +128,9 @@ const Fog: React.FC<FogProps> = ({ fogRange = 7, fogColor, height, children }) =
                   fogColor={fogColor}
               />
           )}
-          <div className="fog-children" ref={ref} style={{ overflow: "auto", width: "100%", height: height, scrollbarWidth: "none" }}>
+          <FogChildrenWrapper className="fog-children" ref={ref} style={{ overflow: "auto", width: "100%", height: height, scrollbarWidth: "none" }}>
               {children}
-          </div>
+          </FogChildrenWrapper>
       </div>
   );
 };
