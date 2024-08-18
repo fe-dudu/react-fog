@@ -1,4 +1,4 @@
 import FogEffect from "./FogEffect";
 import Fog from "./Fog";
 
-export default { Fog, FogEffect };
+export { Fog, FogEffect };

@@ -1,4 +1,4 @@
-import { RefObject, useSyncExternalStore } from "react";
+import { RefObject, useSyncExternalStore, useRef, useCallback } from "react";
 
 interface FogState {
   isTop: boolean;
@@ -8,34 +8,59 @@ interface FogState {
 }
 
 const useFog = (ref: RefObject<HTMLElement>): FogState => {
-  const subscribe = (callback: () => void) => {
+  const stateRef = useRef<FogState>({
+    isTop: true,
+    isBottom: true,
+    isLeft: true,
+    isRight: true,
+  });
+
+  const calculateState = useCallback((): FogState => {
     const el = ref.current;
-    if (!el) return () => {};
+    if (!el) return stateRef.current;
 
-    window.addEventListener("resize", callback);
-    el.addEventListener("scroll", callback);
-
-    return () => {
-      window.removeEventListener("resize", callback);
-      el.removeEventListener("scroll", callback);
-    };
-  };
-
-  const getSnapshot = (): FogState => {
-    const el = ref.current;
-    if (!el) return { isTop: true, isBottom: true, isLeft: true, isRight: true };
-
-    return {
+    const newState = {
       isTop: el.scrollTop <= 0,
       isBottom: el.scrollTop + el.clientHeight + 1 >= el.scrollHeight,
       isLeft: el.scrollLeft <= 0,
       isRight: el.scrollLeft + el.clientWidth + 1 >= el.scrollWidth,
     };
-  };
 
-  const getServerSnapshot = (): FogState => {
-    return { isTop: true, isBottom: true, isLeft: true, isRight: true };
-  };
+    if (JSON.stringify(newState) !== JSON.stringify(stateRef.current)) {
+      stateRef.current = newState;
+    }
+
+    return stateRef.current;
+  }, [ref]);
+
+  const subscribe = useCallback(
+    (callback: () => void) => {
+      const el = ref.current;
+      if (!el) return () => {};
+
+      const handleChange = () => {
+        calculateState();
+        callback();
+      };
+
+      window.addEventListener("resize", handleChange);
+      el.addEventListener("scroll", handleChange);
+
+      return () => {
+        window.removeEventListener("resize", handleChange);
+        el.removeEventListener("scroll", handleChange);
+      };
+    },
+    [ref, calculateState],
+  );
+
+  const getSnapshot = useCallback(() => {
+    return calculateState();
+  }, [calculateState]);
+
+  const getServerSnapshot = useCallback((): FogState => {
+    return stateRef.current;
+  }, []);
 
   return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 };

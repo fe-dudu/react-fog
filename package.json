@@ -3,6 +3,14 @@
   "version": "1.2.5",
   "type": "module",
   "description": "A component that adds a fog effect to indicate scrollability to overflowed components.",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
