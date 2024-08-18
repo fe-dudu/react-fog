@@ -1,24 +1,14 @@
 {
   "name": "react-fog",
   "version": "1.2.4",
+  "type": "module",
   "description": "A component that adds a fog effect to indicate scrollability to overflowed components.",
-  "main": "./dist/cjs/index.js",
-  "module": "./dist/esm/index.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "require": "./dist/cjs/index.js",
-      "import": "./dist/esm/index.js"
-    }
-  },
-  "files": [
-    "dist"
-  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "build": "npm run build:esm && npm run build:cjs",
-    "build:esm": "tsc --module esnext --outDir dist/esm",
-    "build:cjs": "tsc --module commonjs --outDir dist/cjs",
-    "prepublishOnly": "npm run build"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "prepublish": "tsc"
   },
   "repository": {
     "type": "git",
