@@ -112,6 +112,7 @@ const FogTable = () => {
 ```
 
 ## Usage 6 - MUi Chip example
+
 ```
 import Fog from 'react-fog';
 import { Chip, Box } from "@mui/material";
@@ -136,4 +137,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Need Help?
 
-Have questions or issues? Please open an [issue](https://github.com/dohyun2im/react-fog/issues).
+Have questions or issues? Please open an [issue](https://github.com/fe-dudu/react-fog/issues).
