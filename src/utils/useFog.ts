@@ -23,7 +23,7 @@ const useFog = (ref: RefObject<HTMLElement>): FogState => {
 
   const getSnapshot = (): FogState => {
     const el = ref.current;
-    if (!el) return { isTop: false, isBottom: false, isLeft: false, isRight: false };
+    if (!el) return { isTop: true, isBottom: true, isLeft: true, isRight: true };
 
     return {
       isTop: el.scrollTop <= 0,
@@ -34,7 +34,7 @@ const useFog = (ref: RefObject<HTMLElement>): FogState => {
   };
 
   const getServerSnapshot = (): FogState => {
-    return { isTop: false, isBottom: false, isLeft: false, isRight: false };
+    return { isTop: true, isBottom: true, isLeft: true, isRight: true };
   };
 
   return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
