@@ -1,4 +1,4 @@
-import { RefObject, useSyncExternalStore, useRef, useCallback } from "react";
+import { RefObject, useCallback, useRef, useSyncExternalStore } from "react";
 
 interface FogState {
   isTop: boolean;
