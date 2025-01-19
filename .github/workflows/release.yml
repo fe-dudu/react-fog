@@ -1,0 +1,27 @@
+name: Changesets PR, Publish
+
+on:
+  push:
+    branches: main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pnpm install --frozen-lockfile
+      - run: |
+          git config --global user.name "fe-dudu"
+          git config --global user.email "ehehwhdwhd@naver.com"
+      - name: Changesets PR, Publish
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          title: "chore: version packages"
+          commit: "chore: version packages"
+          version: pnpm changeset:version
+          publish: pnpm changeset:publish
+          setupGitUser: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
