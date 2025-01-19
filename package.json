@@ -9,6 +9,10 @@
     "type": "git",
     "url": "https://github.com/fe-dudu/react-fog.git"
   },
+  "files": [
+    "dist",
+    "src"
+  ],
   "keywords": [
     "react",
     "react-component",
