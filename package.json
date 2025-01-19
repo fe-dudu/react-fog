@@ -3,24 +3,8 @@
   "version": "1.2.7",
   "type": "module",
   "description": "A component that adds a fog effect to indicate scrollability to overflowed components.",
-  "exports": {
-    ".": {
-      "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
-      }
-    }
-  },
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "scripts": {
-    "changeset": "changeset",
-    "changeset:publish": "changeset publish",
-    "changeset:version": "changeset version",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
-    "prepublish": "tsc"
-  },
+  "author": "fe-dudu <ehehwhdwhd@naver.com>",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/fe-dudu/react-fog.git"
@@ -39,12 +23,26 @@
     "MUi chip style",
     "MUi chip fog"
   ],
-  "author": "fe-dudu <ehehwhdwhd@naver.com>",
-  "license": "MIT",
+  "homepage": "https://github.com/fe-dudu/react-fog",
   "bugs": {
     "url": "https://github.com/fe-dudu/react-fog/issues"
   },
-  "homepage": "https://github.com/fe-dudu/react-fog",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "changeset": "changeset",
+    "changeset:publish": "pnpm build && changeset publish",
+    "changeset:version": "changeset version && pnpm i --lockfile-only",
+    "build": "tsc"
+  },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
