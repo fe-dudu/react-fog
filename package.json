@@ -54,5 +54,8 @@
     "@types/react-dom": "^18.2.25",
     "typescript": "^5.4.5"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "packageManager": "pnpm@9.12.3"
 }
