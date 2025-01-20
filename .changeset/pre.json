@@ -1,0 +1,8 @@
+{
+  "mode": "pre",
+  "tag": "rc",
+  "initialVersions": {
+    "react-fog": "1.2.12"
+  },
+  "changesets": []
+}
