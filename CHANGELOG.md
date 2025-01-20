@@ -1,5 +1,11 @@
 # react-fog
 
+## 1.2.13
+
+### Patch Changes
+
+- [`d8f0d09`](https://github.com/fe-dudu/react-fog/commit/d8f0d092c8a1f0057cb6ff2ff6bb9c995c897100) Thanks [@fe-dudu](https://github.com/fe-dudu)! - change ver
+
 ## 1.2.12
 
 ### Patch Changes
