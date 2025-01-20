@@ -1,5 +1,21 @@
 # react-fog
 
+### Patch Changes
+
+- ver
+
+## 1.2.14
+
+### Patch Changes
+
+- ver
+
+## 1.2.14-rc.0
+
+### Patch Changes
+
+- ver
+
 ## 1.2.13
 
 ### Patch Changes
