@@ -42,9 +42,12 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
+    "enter": "changeset pre enter rc",
+    "exit": "changeset pre exit",
     "changeset": "changeset",
     "changeset:publish": "pnpm build && changeset publish",
     "changeset:version": "changeset version && pnpm i --lockfile-only",
+    "changeset:publish-rc": "pnpm build && changeset publish --tag rc",
     "build": "tsc"
   },
   "dependencies": {
