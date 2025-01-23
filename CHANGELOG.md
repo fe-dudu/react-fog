@@ -1,5 +1,11 @@
 # react-fog
 
+## 1.2.15
+
+### Patch Changes
+
+- [`9bfc809`](https://github.com/fe-dudu/react-fog/commit/9bfc809db68a4eee063774929d5f7f23692eb81e) Thanks [@fe-dudu](https://github.com/fe-dudu)! - Bundling with tsup
+
 ### Patch Changes
 
 - ver
