@@ -1,16 +1,15 @@
-"use client";
-
-import React, { PropsWithChildren, useRef } from "react";
+import { useRef } from "react";
 import FogEffect from "./FogEffect";
 import useFog from "./utils/useFog";
 
-export interface FogProps extends PropsWithChildren {
+interface FogProps {
   fogRange?: number;
   fogColor?: string;
   height?: number;
+  children: React.ReactNode;
 }
 
-const Fog: React.FC<FogProps> = ({ fogRange = 7, fogColor, height, children }) => {
+export default function Fog({ fogRange = 7, fogColor, height, children }: FogProps) {
   const ref = useRef<HTMLDivElement>(null);
   const { isTop, isBottom, isLeft, isRight } = useFog(ref);
 
@@ -33,6 +32,4 @@ const Fog: React.FC<FogProps> = ({ fogRange = 7, fogColor, height, children }) =
       </div>
     </div>
   );
-};
-
-export default Fog;
+}

@@ -54,7 +54,7 @@ const useFog = (ref: RefObject<HTMLElement>): FogState => {
     [ref, calculateState],
   );
 
-  const getSnapshot = useCallback(() => {
+  const getSnapshot = useCallback((): FogState => {
     return calculateState();
   }, [calculateState]);
 

@@ -1,2 +1,1 @@
-import Fog from "./Fog";
-export default Fog;
+export { default } from "./Fog";

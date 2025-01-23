@@ -1,8 +1,6 @@
-"use client";
+import { HTMLAttributes } from "react";
 
-import React, { HTMLAttributes } from "react";
-
-export interface FogEffectProps extends HTMLAttributes<HTMLDivElement> {
+interface FogEffectProps extends HTMLAttributes<HTMLDivElement> {
   width: string;
   height: string;
   top?: number;
@@ -12,7 +10,7 @@ export interface FogEffectProps extends HTMLAttributes<HTMLDivElement> {
   fogColor?: string;
 }
 
-const FogEffect: React.FC<FogEffectProps> = ({
+export default function FogEffect({
   width,
   height,
   top,
@@ -21,7 +19,7 @@ const FogEffect: React.FC<FogEffectProps> = ({
   right,
   fogColor = "rgb(199, 199, 199)",
   ...props
-}) => {
+}: FogEffectProps) {
   const getBackground = (): string | undefined => {
     if (top === 0) return `linear-gradient(to top, rgba(0, 0, 0, 0) 0%, ${fogColor} 100%)`;
     if (bottom === 0) return `linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, ${fogColor} 100%)`;
@@ -46,6 +44,4 @@ const FogEffect: React.FC<FogEffectProps> = ({
       {...props}
     />
   );
-};
-
-export default FogEffect;
+}
