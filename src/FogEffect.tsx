@@ -40,6 +40,7 @@ export default function FogEffect({
         position: "absolute",
         zIndex: 999,
         background: getBackground(),
+        pointerEvents: 'none'
       }}
       {...props}
     />
