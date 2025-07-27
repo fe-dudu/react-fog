@@ -1,5 +1,11 @@
 # react-fog
 
+## 1.2.16
+
+### Patch Changes
+
+- [#8](https://github.com/fe-dudu/react-fog/pull/8) [`e490a01`](https://github.com/fe-dudu/react-fog/commit/e490a0113551e7ccce7ab0b259afb656d7fc2959) Thanks [@IliyanID](https://github.com/IliyanID)! - allow click‑through on fog overlays
+
 ## 1.2.15
 
 ### Patch Changes
