@@ -1,3 +1,11 @@
+# react-fog
+
+[![npm version](https://badge.fury.io/js/react-fog.svg)](https://badge.fury.io/js/react-fog)
+![Platform](https://img.shields.io/badge/platform-Web-lightgrey)
+[![npm downloads](https://img.shields.io/npm/dm/react-fog.svg?style=flat-square)](https://www.npmjs.com/package/react-fog)
+
+A component that adds a fog effect to indicate scrollability to overflowed components.
+
 ## Demo
 
 ![scroll-x](https://i.ibb.co/rHGDDPF/scroll-x.gif)
@@ -6,17 +14,15 @@
 ![fog-color](https://i.ibb.co/n8dXLLX/fog-color-change.png)
 ![fog-range](https://i.ibb.co/6Rjf6Kc/fog-range.png)
 
-## Project
-
-A component that adds a fog effect to indicate scrollability to overflowed components.
-
 ## Getting Started
 
 ```
 npm i react-fog
 ```
 
-## Usage 1 - X-axis scroll fog effect
+## Usage
+
+### 1. X-axis scroll fog effect
 
 ```
 import Fog from 'react-fog';
@@ -24,13 +30,13 @@ import Fog from 'react-fog';
 const LargeWidthComp = () => {
   return (
     <Fog> // width: "100%", overflow: "auto"
-      <LargeWidth/>
+      <LargeWidth />
     </Fog>
   )
 };
 ```
 
-## Usage 2 - X-axis, Y-axis scroll fog effect
+### 2. X-axis, Y-axis scroll fog effect
 
 ```
 import Fog from 'react-fog';
@@ -38,13 +44,13 @@ import Fog from 'react-fog';
 const LargeWidthComp = () => {
   return (
     <Fog height={300}> // width: "100%", height: "300px", overflow: "auto"
-      <LargeWidthAndLargeHeight/>
+      <LargeWidthAndLargeHeight />
     </Fog>
   )
 };
 ```
 
-## Usage 3 - Change Fog color
+### 3. Change Fog color
 
 ```
 import Fog from 'react-fog';
@@ -52,13 +58,13 @@ import Fog from 'react-fog';
 const LargeWidthComp = () => {
   return (
     <Fog fogColor="#0af373" height={300}>
-      <LargeWidthAndLargeHeight/>
+      <LargeWidthAndLargeHeight />
     </Fog>
   )
 };
 ```
 
-## Usage 4 - Change Fog range
+### 4. Change Fog range
 
 ```
 import Fog from 'react-fog';
@@ -66,13 +72,13 @@ import Fog from 'react-fog';
 const LargeWidthComp = () => {
   return (
     <Fog fogRange={25} height={300}> // 25px, default 7px
-      <LargeWidthAndLargeHeight/>
+      <LargeWidthAndLargeHeight />
     </Fog>
   )
 };
 ```
 
-## Usage 5 - Width MUi Table example
+### 5. Width MUi Table example
 
 ```
 import Fog from 'react-fog';
@@ -111,7 +117,7 @@ const FogTable = () => {
 };
 ```
 
-## Usage 6 - MUi Chip example
+### 6. MUi Chip example
 
 ```
 import Fog from 'react-fog';
