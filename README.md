@@ -22,7 +22,8 @@ npm i react-fog
 | Prop | Type | Default | Description |
 | --- | --- | --- | --- |
 | `fogSize` | `number` | `7` | Fog thickness in pixels. |
-| `fogColor` | `string` | `rgb(199, 199, 199)` | Fog gradient color. |
+| `fogInnerColor` | `string` | `rgba(0, 0, 0, 0)` | Inner side color (content side). |
+| `fogOuterColor` | `string` | `rgb(199, 199, 199)` | Outer side color (edge side). |
 | `height` | `number` | `undefined` | Scroll container height in pixels (enables y-axis fog). |
 | `fogZIndex` | `number` | `999` | z-index for fog overlay. |
 | `children` | `React.ReactNode` | `-` | Scrollable content. |
@@ -59,14 +60,14 @@ const LargeWidthComp = () => {
 };
 ```
 
-### 3. Change fog color
+### 3. Change fog gradient
 
 ```tsx
 import Fog from 'react-fog';
 
 const LargeWidthComp = () => {
   return (
-    <Fog fogColor="#0af373" height={300}>
+    <Fog fogInnerColor="transparent" fogOuterColor="#0af373" height={300}>
       <LargeWidthAndLargeHeight />
     </Fog>
   )

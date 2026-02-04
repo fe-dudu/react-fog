@@ -5,13 +5,21 @@ import useFog from './utils/useFog';
 
 interface FogProps {
   fogSize?: number;
-  fogColor?: string;
+  fogInnerColor?: string;
+  fogOuterColor?: string;
   height?: number;
   fogZIndex?: number;
   children: React.ReactNode;
 }
 
-export default function Fog({ fogSize = 7, fogColor, height, fogZIndex, children }: FogProps) {
+export default function Fog({
+  fogSize = 7,
+  fogInnerColor = 'rgba(0, 0, 0, 0)',
+  fogOuterColor = 'rgb(199, 199, 199)',
+  height,
+  fogZIndex,
+  children,
+}: FogProps) {
   const ref = useRef<HTMLDivElement>(null);
   const { isTop, isBottom, isLeft, isRight } = useFog(ref);
 
@@ -23,7 +31,8 @@ export default function Fog({ fogSize = 7, fogColor, height, fogZIndex, children
           width="100%"
           height={`${fogSize}px`}
           top={0}
-          fogColor={fogColor}
+          fogInnerColor={fogInnerColor}
+          fogOuterColor={fogOuterColor}
           zIndex={fogZIndex}
         />
       )}
@@ -33,7 +42,8 @@ export default function Fog({ fogSize = 7, fogColor, height, fogZIndex, children
           width="100%"
           height={`${fogSize}px`}
           bottom={0}
-          fogColor={fogColor}
+          fogInnerColor={fogInnerColor}
+          fogOuterColor={fogOuterColor}
           zIndex={fogZIndex}
         />
       )}
@@ -43,7 +53,8 @@ export default function Fog({ fogSize = 7, fogColor, height, fogZIndex, children
           width={`${fogSize}px`}
           height="100%"
           left={0}
-          fogColor={fogColor}
+          fogInnerColor={fogInnerColor}
+          fogOuterColor={fogOuterColor}
           zIndex={fogZIndex}
         />
       )}
@@ -53,7 +64,8 @@ export default function Fog({ fogSize = 7, fogColor, height, fogZIndex, children
           width={`${fogSize}px`}
           height="100%"
           right={0}
-          fogColor={fogColor}
+          fogInnerColor={fogInnerColor}
+          fogOuterColor={fogOuterColor}
           zIndex={fogZIndex}
         />
       )}

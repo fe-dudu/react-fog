@@ -7,7 +7,8 @@ interface FogEffectProps extends HTMLAttributes<HTMLDivElement> {
   bottom?: number;
   left?: number;
   right?: number;
-  fogColor?: string;
+  fogInnerColor: string;
+  fogOuterColor: string;
   zIndex?: number;
 }
 
@@ -18,22 +19,23 @@ export default function FogEffect({
   bottom,
   left,
   right,
-  fogColor = 'rgb(199, 199, 199)',
+  fogInnerColor,
+  fogOuterColor,
   zIndex = 999,
   ...props
 }: FogEffectProps) {
   const getBackground = (): string | undefined => {
     if (top === 0) {
-      return `linear-gradient(to top, rgba(0, 0, 0, 0) 0%, ${fogColor} 100%)`;
+      return `linear-gradient(to top, ${fogInnerColor} 0%, ${fogOuterColor} 100%)`;
     }
     if (bottom === 0) {
-      return `linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, ${fogColor} 100%)`;
+      return `linear-gradient(to bottom, ${fogInnerColor} 0%, ${fogOuterColor} 100%)`;
     }
     if (left === 0) {
-      return `linear-gradient(to left, rgba(0, 0, 0, 0) 0%, ${fogColor} 100%)`;
+      return `linear-gradient(to left, ${fogInnerColor} 0%, ${fogOuterColor} 100%)`;
     }
     if (right === 0) {
-      return `linear-gradient(to right, rgba(0, 0, 0, 0) 0%, ${fogColor} 100%)`;
+      return `linear-gradient(to right, ${fogInnerColor} 0%, ${fogOuterColor} 100%)`;
     }
     return undefined;
   };
