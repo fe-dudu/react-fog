@@ -14,7 +14,7 @@ interface FogProps {
 
 export default function Fog({
   fogSize = 7,
-  fogInnerColor = 'rgba(0, 0, 0, 0)',
+  fogInnerColor = 'rgba(255, 255, 255, 0)',
   fogOuterColor = 'rgb(199, 199, 199)',
   height,
   fogZIndex,

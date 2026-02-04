@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    if: github.repository == 'fe-dudu/expo-horizontal-picker'
+    if: github.repository == 'fe-dudu/react-fog'
     runs-on: ubuntu-latest
     permissions:
       id-token: write

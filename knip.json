@@ -2,7 +2,7 @@
   "$schema": "https://unpkg.com/knip@5/schema.json",
   "workspaces": {
     ".": {
-      "ignore": ["packlint.config.mjs"]
+      "ignore": ["packlint.config.mjs", "example/**"]
     }
   }
 }

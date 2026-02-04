@@ -6,6 +6,9 @@
 
 A component that adds a fog effect to overflowed scroll containers to indicate scrollability.
 
+**Demo**
+`https://fe-dudu.github.io/react-fog`
+
 
 ![scroll-x](assets/scroll-x.gif)
 ![scroll](assets/scroll.gif)
