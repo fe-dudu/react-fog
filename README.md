@@ -4,7 +4,7 @@
 ![Platform](https://img.shields.io/badge/platform-Web-lightgrey)
 [![npm downloads](https://img.shields.io/npm/dm/react-fog.svg?style=flat-square)](https://www.npmjs.com/package/react-fog)
 
-A component that adds a fog effect to indicate scrollability to overflowed components.
+A component that adds a fog effect to overflowed scroll containers to indicate scrollability.
 
 
 ![scroll-x](assets/scroll-x.gif)
@@ -17,29 +17,76 @@ A component that adds a fog effect to indicate scrollability to overflowed compo
 npm i react-fog
 ```
 
-## Usage
-
-```tsx
-import Fog from 'react-fog';
-
-const Example = () => {
-  return (
-    <Fog height={300} fogRange={12} fogColor="#0af373" fogZIndex={10}>
-      <LargeWidthAndLargeHeight />
-    </Fog>
-  );
-};
-```
-
 ## Props
 
 | Prop | Type | Default | Description |
 | --- | --- | --- | --- |
-| `fogRange` | `number` | `7` | Fog thickness in pixels. |
+| `fogSize` | `number` | `7` | Fog thickness in pixels. |
 | `fogColor` | `string` | `rgb(199, 199, 199)` | Fog gradient color. |
-| `height` | `number` | `undefined` | Scroll container height in pixels. |
-| `fogZIndex` | `number` | `999` | z-index for fog overlay layers. |
+| `height` | `number` | `undefined` | Scroll container height in pixels (enables y-axis fog). |
+| `fogZIndex` | `number` | `999` | z-index for fog overlay. |
 | `children` | `React.ReactNode` | `-` | Scrollable content. |
+
+## Usage
+
+### 1. Horizontal scroll fog
+
+```tsx
+import Fog from 'react-fog';
+
+const LargeWidthComp = () => {
+  // width: "100%", overflow: "auto"
+  return (
+    <Fog>
+      <LargeWidth />
+    </Fog>
+  )
+};
+```
+
+### 2. Both axes scroll fog
+
+```tsx
+import Fog from 'react-fog';
+
+const LargeWidthComp = () => {
+  // width: "100%", height: "300px", overflow: "auto"
+  return (
+    <Fog height={300}>
+      <LargeWidthAndLargeHeight />
+    </Fog>
+  )
+};
+```
+
+### 3. Change fog color
+
+```tsx
+import Fog from 'react-fog';
+
+const LargeWidthComp = () => {
+  return (
+    <Fog fogColor="#0af373" height={300}>
+      <LargeWidthAndLargeHeight />
+    </Fog>
+  )
+};
+```
+
+### 4. Change fog size
+
+```tsx
+import Fog from 'react-fog';
+
+const LargeWidthComp = () => {
+  // 25px (default 7px)
+  return (
+    <Fog fogSize={25} height={300}>
+      <LargeWidthAndLargeHeight />
+    </Fog>
+  )
+};
+```
 
 ## LICENSE
 
