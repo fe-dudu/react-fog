@@ -20,8 +20,12 @@ jobs:
         with:
           node-version-file: '.nvmrc'
           cache: 'pnpm'
-          cache-dependency-path: 'example/pnpm-lock.yaml'
-      - name: Install dependencies
+          cache-dependency-path: |
+            pnpm-lock.yaml
+            example/pnpm-lock.yaml
+      - name: Install root dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Install example dependencies
         working-directory: example
         run: pnpm install --frozen-lockfile
       - name: Build
