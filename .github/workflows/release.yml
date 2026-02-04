@@ -25,8 +25,8 @@ jobs:
         with:
           title: "chore: version packages"
           commit: "chore: version packages"
-          version: yarn changeset:version
-          publish: yarn changeset:publish
+          version: pnpm changeset:version
+          publish: pnpm changeset:publish
           setupGitUser: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
