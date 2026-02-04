@@ -7,11 +7,9 @@
 A component that adds a fog effect to indicate scrollability to overflowed components.
 
 
-![scroll-x](https://i.ibb.co/rHGDDPF/scroll-x.gif)
-![scroll](https://i.ibb.co/WnwW76n/scroll.gif)
-![tab](https://i.ibb.co/92PpLF5/tab.gif)
-![fog-color](https://i.ibb.co/n8dXLLX/fog-color-change.png)
-![fog-range](https://i.ibb.co/6Rjf6Kc/fog-range.png)
+![scroll-x](assets/scroll-x.gif)
+![scroll](assets/scroll.gif)
+![tab](assets/tab.gif)
 
 ## Getting Started
 
