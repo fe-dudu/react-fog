@@ -8,6 +8,7 @@ interface FogEffectProps extends HTMLAttributes<HTMLDivElement> {
   left?: number;
   right?: number;
   fogColor?: string;
+  zIndex?: number;
 }
 
 export default function FogEffect({
@@ -18,6 +19,7 @@ export default function FogEffect({
   left,
   right,
   fogColor = 'rgb(199, 199, 199)',
+  zIndex = 999,
   ...props
 }: FogEffectProps) {
   const getBackground = (): string | undefined => {
@@ -46,7 +48,7 @@ export default function FogEffect({
         left: left,
         right: right,
         position: 'absolute',
-        zIndex: 999,
+        zIndex: zIndex,
         background: getBackground(),
         pointerEvents: 'none',
       }}

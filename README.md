@@ -19,61 +19,27 @@ npm i react-fog
 
 ## Usage
 
-### 1. X-axis scroll fog effect
-
-```
+```tsx
 import Fog from 'react-fog';
 
-const LargeWidthComp = () => {
+const Example = () => {
   return (
-    <Fog> // width: "100%", overflow: "auto"
-      <LargeWidth />
-    </Fog>
-  )
-};
-```
-
-### 2. X-axis, Y-axis scroll fog effect
-
-```
-import Fog from 'react-fog';
-
-const LargeWidthComp = () => {
-  return (
-    <Fog height={300}> // width: "100%", height: "300px", overflow: "auto"
+    <Fog height={300} fogRange={12} fogColor="#0af373" fogZIndex={10}>
       <LargeWidthAndLargeHeight />
     </Fog>
-  )
+  );
 };
 ```
 
-### 3. Change Fog color
+## Props
 
-```
-import Fog from 'react-fog';
-
-const LargeWidthComp = () => {
-  return (
-    <Fog fogColor="#0af373" height={300}>
-      <LargeWidthAndLargeHeight />
-    </Fog>
-  )
-};
-```
-
-### 4. Change Fog range
-
-```
-import Fog from 'react-fog';
-
-const LargeWidthComp = () => {
-  return (
-    <Fog fogRange={25} height={300}> // 25px, default 7px
-      <LargeWidthAndLargeHeight />
-    </Fog>
-  )
-};
-```
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `fogRange` | `number` | `7` | Fog thickness in pixels. |
+| `fogColor` | `string` | `rgb(199, 199, 199)` | Fog gradient color. |
+| `height` | `number` | `undefined` | Scroll container height in pixels. |
+| `fogZIndex` | `number` | `999` | z-index for fog overlay layers. |
+| `children` | `React.ReactNode` | `-` | Scrollable content. |
 
 ## LICENSE
 
