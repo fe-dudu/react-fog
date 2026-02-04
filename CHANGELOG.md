@@ -1,5 +1,11 @@
 # react-fog
 
+## 2.0.0
+
+### Major Changes
+
+- [#12](https://github.com/fe-dudu/react-fog/pull/12) [`eafb45c`](https://github.com/fe-dudu/react-fog/commit/eafb45cd5b256db37a743ea795615b95dab8e601) Thanks [@fe-dudu](https://github.com/fe-dudu)! - Replace fogColor with fogInnerColor/fogOuterColor, rename fogRange to fogSize, and add fogZIndex.
+
 ## 1.2.16
 
 ### Patch Changes
