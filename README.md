@@ -6,7 +6,6 @@
 
 A component that adds a fog effect to indicate scrollability to overflowed components.
 
-## Demo
 
 ![scroll-x](https://i.ibb.co/rHGDDPF/scroll-x.gif)
 ![scroll](https://i.ibb.co/WnwW76n/scroll.gif)
@@ -73,65 +72,6 @@ const LargeWidthComp = () => {
   return (
     <Fog fogRange={25} height={300}> // 25px, default 7px
       <LargeWidthAndLargeHeight />
-    </Fog>
-  )
-};
-```
-
-### 5. Width MUi Table example
-
-```
-import Fog from 'react-fog';
-import { Table, TableBody, TableCell, TableHead, TableRow } from "@mui/material";
-import _ from "lodash";
-
-const FogTable = () => {
-  return (
-    <Fog fogColor="#98fa7a" fogRange={30} height={250}>
-      <Table>
-        <TableHead>
-          <TableRow>
-            {_.range(0, 7).map((i) => (
-              <TableCell key={`table-head-${i}`} width={200}>
-                table head {i}
-              </TableCell>
-            ))}
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {_.range(0, 10).map((i) => (
-            <TableRow key={`row-${i}`}>
-              <TableCell width={200}>table cell {i}-1</TableCell>
-              <TableCell width={200}>table cell {i}-2</TableCell>
-              <TableCell width={200}>table cell {i}-3</TableCell>
-              <TableCell width={200}>table cell {i}-4</TableCell>
-              <TableCell width={200}>table cell {i}-5</TableCell>
-              <TableCell width={200}>table cell {i}-6</TableCell>
-              <TableCell width={200}>table cell {i}-7</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </Fog>
-  )
-};
-```
-
-### 6. MUi Chip example
-
-```
-import Fog from 'react-fog';
-import { Chip, Box } from "@mui/material";
-import _ from "lodash";
-
-const FogTable = () => {
-  return (
-    <Fog fogColor="#eee" fogRange={10}>
-      <Box display="flex" gap={2}>
-        {_.range(0, 10).map((i) => (
-          <Chip color="info" key={i} label={`label-${i}`} />
-        ))}
-      </Box>
     </Fog>
   )
 };

@@ -1,6 +1,7 @@
-import { useRef } from "react";
-import FogEffect from "./FogEffect";
-import useFog from "./utils/useFog";
+import { useRef } from 'react';
+
+import FogEffect from './FogEffect';
+import useFog from './utils/useFog';
 
 interface FogProps {
   fogRange?: number;
@@ -14,7 +15,7 @@ export default function Fog({ fogRange = 7, fogColor, height, children }: FogPro
   const { isTop, isBottom, isLeft, isRight } = useFog(ref);
 
   return (
-    <div className="fog-wrapper" style={{ position: "relative" }}>
+    <div className="fog-wrapper" style={{ position: 'relative' }}>
       {!isTop && (
         <FogEffect className="fog-effect-top" width="100%" height={`${fogRange}px`} top={0} fogColor={fogColor} />
       )}
@@ -27,7 +28,7 @@ export default function Fog({ fogRange = 7, fogColor, height, children }: FogPro
       {!isRight && (
         <FogEffect className="fog-effect-right" width={`${fogRange}px`} height="100%" right={0} fogColor={fogColor} />
       )}
-      <div className="fog-children" ref={ref} style={{ overflow: "auto", width: "100%", height: height }}>
+      <div className="fog-children" ref={ref} style={{ overflow: 'auto', width: '100%', height: height }}>
         {children}
       </div>
     </div>

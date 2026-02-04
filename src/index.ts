@@ -1,1 +1,1 @@
-export { default } from "./Fog";
+export { default } from './Fog';
