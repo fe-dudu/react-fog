@@ -4,29 +4,70 @@ import FogEffect from './FogEffect';
 import useFog from './utils/useFog';
 
 interface FogProps {
-  fogRange?: number;
-  fogColor?: string;
+  fogSize?: number;
+  fogInnerColor?: string;
+  fogOuterColor?: string;
   height?: number;
+  fogZIndex?: number;
   children: React.ReactNode;
 }
 
-export default function Fog({ fogRange = 7, fogColor, height, children }: FogProps) {
+export default function Fog({
+  fogSize = 7,
+  fogInnerColor = 'rgba(255, 255, 255, 0)',
+  fogOuterColor = 'rgb(199, 199, 199)',
+  height,
+  fogZIndex,
+  children,
+}: FogProps) {
   const ref = useRef<HTMLDivElement>(null);
   const { isTop, isBottom, isLeft, isRight } = useFog(ref);
 
   return (
     <div className="fog-wrapper" style={{ position: 'relative' }}>
       {!isTop && (
-        <FogEffect className="fog-effect-top" width="100%" height={`${fogRange}px`} top={0} fogColor={fogColor} />
+        <FogEffect
+          className="fog-effect-top"
+          width="100%"
+          height={`${fogSize}px`}
+          top={0}
+          fogInnerColor={fogInnerColor}
+          fogOuterColor={fogOuterColor}
+          zIndex={fogZIndex}
+        />
       )}
       {!isBottom && (
-        <FogEffect className="fog-effect-bottom" width="100%" height={`${fogRange}px`} bottom={0} fogColor={fogColor} />
+        <FogEffect
+          className="fog-effect-bottom"
+          width="100%"
+          height={`${fogSize}px`}
+          bottom={0}
+          fogInnerColor={fogInnerColor}
+          fogOuterColor={fogOuterColor}
+          zIndex={fogZIndex}
+        />
       )}
       {!isLeft && (
-        <FogEffect className="fog-effect-left" width={`${fogRange}px`} height="100%" left={0} fogColor={fogColor} />
+        <FogEffect
+          className="fog-effect-left"
+          width={`${fogSize}px`}
+          height="100%"
+          left={0}
+          fogInnerColor={fogInnerColor}
+          fogOuterColor={fogOuterColor}
+          zIndex={fogZIndex}
+        />
       )}
       {!isRight && (
-        <FogEffect className="fog-effect-right" width={`${fogRange}px`} height="100%" right={0} fogColor={fogColor} />
+        <FogEffect
+          className="fog-effect-right"
+          width={`${fogSize}px`}
+          height="100%"
+          right={0}
+          fogInnerColor={fogInnerColor}
+          fogOuterColor={fogOuterColor}
+          zIndex={fogZIndex}
+        />
       )}
       <div className="fog-children" ref={ref} style={{ overflow: 'auto', width: '100%', height: height }}>
         {children}
