@@ -1,0 +1,103 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "files": {
+    "includes": ["**", "!**/node_modules", "!**/dist"]
+  },
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": {
+          "level": "on",
+          "options": {
+            "identifierOrder": "lexicographic",
+            "groups": [
+              { "type": true, "source": [":NODE:", ":PACKAGE:"] },
+              { "type": false, "source": [":NODE:", ":PACKAGE:"] },
+              ":BLANK_LINE:",
+              { "type": true, "source": ["@/**", "./**", "*"] },
+              { "type": false, "source": ["@/**", "./**", "*"] }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "formatter": {
+    "indentWidth": 2,
+    "lineWidth": 120,
+    "indentStyle": "space",
+    "enabled": true,
+    "bracketSpacing": true,
+    "formatWithErrors": false
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single",
+      "trailingCommas": "all",
+      "semicolons": "always",
+      "bracketSameLine": false
+    }
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "a11y": {
+        "useButtonType": "off"
+      },
+      "complexity": {
+        "noVoid": "error",
+        "noBannedTypes": "error",
+        "noExtraBooleanCast": "error",
+        "noExcessiveCognitiveComplexity": "error"
+      },
+      "correctness": {
+        "noUnusedImports": "error",
+        "noUnusedVariables": "error",
+        "useHookAtTopLevel": "error",
+        "noChildrenProp": "error",
+        "noReactPropAssignments": "error"
+      },
+      "performance": {
+        "noReExportAll": "error",
+        "noDelete": "error"
+      },
+      "security": {
+        "noDangerouslySetInnerHtml": "error",
+        "noDangerouslySetInnerHtmlWithChildren": "error"
+      },
+      "style": {
+        "noUselessElse": "error",
+        "useCollapsedElseIf": "error",
+        "noNonNullAssertion": "error",
+        "useBlockStatements": "error",
+        "noNestedTernary": "error",
+        "noNamespace": "error",
+        "noYodaExpression": "error",
+        "useConsistentBuiltinInstantiation": "error",
+        "useDefaultSwitchClause": "error",
+        "useFragmentSyntax": "error",
+        "useThrowNewError": "error",
+        "useThrowOnlyError": "error",
+        "useFilenamingConvention": {
+          "level": "error",
+          "options": {
+            "filenameCases": ["camelCase", "PascalCase"]
+          }
+        }
+      },
+      "suspicious": {
+        "noArrayIndexKey": "error",
+        "noAssignInExpressions": "error",
+        "noConfusingVoidType": "error",
+        "noConsole": "error",
+        "noDebugger": "error",
+        "noExplicitAny": "error",
+        "noRedeclare": "error",
+        "noEvolvingTypes": "error",
+        "useNumberToFixedDigitsArgument": "error",
+        "noUnknownAtRules": "off"
+      }
+    }
+  }
+}

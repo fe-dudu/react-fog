@@ -1,4 +1,4 @@
-import { RefObject, useCallback, useRef, useSyncExternalStore } from "react";
+import { type RefObject, useCallback, useRef, useSyncExternalStore } from 'react';
 
 interface FogState {
   isTop: boolean;
@@ -7,7 +7,7 @@ interface FogState {
   isRight: boolean;
 }
 
-const useFog = (ref: RefObject<HTMLElement>): FogState => {
+const useFog = (ref: RefObject<HTMLDivElement | null>): FogState => {
   const stateRef = useRef<FogState>({
     isTop: true,
     isBottom: true,
@@ -17,7 +17,9 @@ const useFog = (ref: RefObject<HTMLElement>): FogState => {
 
   const calculateState = useCallback((): FogState => {
     const el = ref.current;
-    if (!el) return stateRef.current;
+    if (!el) {
+      return stateRef.current;
+    }
 
     const newState = {
       isTop: el.scrollTop <= 0,
@@ -36,19 +38,21 @@ const useFog = (ref: RefObject<HTMLElement>): FogState => {
   const subscribe = useCallback(
     (callback: () => void) => {
       const el = ref.current;
-      if (!el) return () => {};
+      if (!el) {
+        return () => {};
+      }
 
       const handleChange = () => {
         calculateState();
         callback();
       };
 
-      window.addEventListener("resize", handleChange);
-      el.addEventListener("scroll", handleChange);
+      window.addEventListener('resize', handleChange);
+      el.addEventListener('scroll', handleChange);
 
       return () => {
-        window.removeEventListener("resize", handleChange);
-        el.removeEventListener("scroll", handleChange);
+        window.removeEventListener('resize', handleChange);
+        el.removeEventListener('scroll', handleChange);
       };
     },
     [ref, calculateState],

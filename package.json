@@ -2,34 +2,29 @@
   "name": "react-fog",
   "version": "1.2.16",
   "description": "A component that adds a fog effect to indicate scrollability to overflowed components.",
-  "author": "fe-dudu <ehehwhdwhd@naver.com>",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fe-dudu/react-fog.git"
-  },
-  "files": [
-    "dist",
-    "src"
-  ],
   "keywords": [
     "react",
     "react-component",
     "fog-style",
     "fog-wrapper",
-    "MUi",
-    "material-ui",
-    "MUi table effect",
-    "MUi table style",
-    "MUi table fog",
-    "MUi chip effect",
-    "MUi chip style",
-    "MUi chip fog"
+    "table effect",
+    "table style",
+    "table fog",
+    "chip effect",
+    "chip style",
+    "chip fog"
   ],
   "homepage": "https://github.com/fe-dudu/react-fog",
   "bugs": {
     "url": "https://github.com/fe-dudu/react-fog/issues"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fe-dudu/react-fog.git"
+  },
+  "license": "MIT",
+  "author": "fe-dudu <ehehwhdwhd@naver.com>",
+  "packageManager": "pnpm@10.28.2",
   "type": "module",
   "exports": {
     ".": {
@@ -46,29 +41,44 @@
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
-    "enter": "changeset pre enter rc",
-    "exit": "changeset pre exit",
+    "build": "tsup",
     "changeset": "changeset",
     "changeset:publish": "pnpm build && changeset publish",
-    "changeset:version": "changeset version && pnpm i --lockfile-only",
     "changeset:publish-rc": "pnpm build && changeset publish --tag rc",
-    "build": "tsup"
-  },
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "changeset:version": "changeset version && pnpm i --lockfile-only",
+    "enter": "changeset pre enter rc",
+    "exit": "changeset pre exit",
+    "format": "biome check --write --unsafe",
+    "knip": "knip --no-config-hints",
+    "lint": "biome lint",
+    "postinstall": "packlint sort -R && pnpm format",
+    "prepare": "husky"
   },
   "devDependencies": {
-    "@changesets/changelog-github": "^0.5.0",
-    "@changesets/cli": "^2.27.11",
-    "@types/react": "^18.2.79",
-    "@types/react-dom": "^18.2.25",
-    "tsup": "^8.3.5",
-    "typescript": "^5.4.5"
+    "@biomejs/biome": "^2.3.14",
+    "@changesets/changelog-github": "^0.5.2",
+    "@changesets/cli": "^2.29.8",
+    "@commitlint/cli": "^20.4.1",
+    "@commitlint/config-conventional": "^20.4.1",
+    "@types/react": "^19.2.11",
+    "husky": "^9.1.7",
+    "knip": "^5.83.0",
+    "lint-staged": "^16.2.7",
+    "packlint": "^0.2.4",
+    "react": "^19.2.4",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-dom": "*"
   },
   "publishConfig": {
     "access": "public"
-  },
-  "packageManager": "pnpm@9.12.3"
+  }
 }
