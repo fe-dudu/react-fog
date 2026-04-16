@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --fog-inner-value: transparent;
+  --fog-outer-horizontal-value: rgba(0, 0, 0, 0.15);
+  --fog-outer-vertical-value: rgba(0, 0, 0, 0.12);
+  --fog-outer-both-value: rgba(0, 0, 0, 0.2);
+  --fog-outer-feature-value: rgba(246, 231, 207, 0.95);
+  --fog-outer-accent-value: #0af373;
+  color-scheme: light;
+}
+
+.dark {
+  --fog-inner-value: transparent;
+  --fog-outer-horizontal-value: rgba(255, 255, 255, 0.28);
+  --fog-outer-vertical-value: rgba(255, 255, 255, 0.22);
+  --fog-outer-both-value: rgba(255, 255, 255, 0.3);
+  --fog-outer-feature-value: rgba(251, 191, 36, 0.45);
+  --fog-outer-accent-value: #34d399;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-fog-inner: var(--fog-inner-value);
+  --color-fog-outer-horizontal: var(--fog-outer-horizontal-value);
+  --color-fog-outer-vertical: var(--fog-outer-vertical-value);
+  --color-fog-outer-both: var(--fog-outer-both-value);
+  --color-fog-outer-feature: var(--fog-outer-feature-value);
+  --color-fog-outer-accent: var(--fog-outer-accent-value);
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+#root {
+  min-height: 100vh;
+}

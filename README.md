@@ -25,8 +25,8 @@ npm i react-fog
 | Prop | Type | Default | Description |
 | --- | --- | --- | --- |
 | `fogSize` | `number` | `7` | Fog thickness in pixels. |
-| `fogInnerColor` | `string` | `rgba(0, 0, 0, 0)` | Inner side color (content side). |
-| `fogOuterColor` | `string` | `rgb(199, 199, 199)` | Outer side color (edge side). |
+| `fogInnerColor` | `string` | `rgba(0, 0, 0, 0)` | Inner side color (content side). Accepts any CSS color string, including `var(...)`. |
+| `fogOuterColor` | `string` | `rgb(199, 199, 199)` | Outer side color (edge side). Accepts any CSS color string, including `var(...)`. |
 | `height` | `number` | `undefined` | Scroll container height in pixels (enables y-axis fog). |
 | `fogZIndex` | `number` | `999` | z-index for fog overlay. |
 | `children` | `React.ReactNode` | `-` | Scrollable content. |
@@ -70,7 +70,11 @@ import Fog from 'react-fog';
 
 const LargeWidthComp = () => {
   return (
-    <Fog fogInnerColor="transparent" fogOuterColor="#0af373" height={300}>
+    <Fog
+      fogInnerColor="rgba(255, 255, 255, 0)"
+      fogOuterColor="rgba(0, 0, 0, 0.15)"
+      height={300}
+    >
       <LargeWidthAndLargeHeight />
     </Fog>
   )
@@ -86,6 +90,24 @@ const LargeWidthComp = () => {
   // 25px (default 7px)
   return (
     <Fog fogSize={25} height={300}>
+      <LargeWidthAndLargeHeight />
+    </Fog>
+  )
+};
+```
+
+### 4. Use a CSS variable
+
+```tsx
+import Fog from 'react-fog';
+
+const LargeWidthComp = () => {
+  return (
+    <Fog
+      height={300}
+      fogInnerColor="var(--color-fog-inner)"
+      fogOuterColor="var(--color-fog-outer-accent)"
+    >
       <LargeWidthAndLargeHeight />
     </Fog>
   )
