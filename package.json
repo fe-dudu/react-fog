@@ -1,6 +1,6 @@
 {
   "name": "react-fog",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A component that adds a fog effect to overflowed scroll containers to indicate scrollability.",
   "keywords": [
     "react",

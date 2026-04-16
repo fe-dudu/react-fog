@@ -1,5 +1,11 @@
 # react-fog
 
+## 2.0.1
+
+### Patch Changes
+
+- [`8790966`](https://github.com/fe-dudu/react-fog/commit/879096639145bd674646693e1c791f601528d530) Thanks [@fe-dudu](https://github.com/fe-dudu)! - chore: remove postinstall script
+
 ## 2.0.0
 
 ### Major Changes
