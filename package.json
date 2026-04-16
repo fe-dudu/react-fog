@@ -56,7 +56,6 @@
     "format": "biome check --write --unsafe",
     "knip": "knip --no-config-hints",
     "lint": "biome lint",
-    "postinstall": "packlint sort -R && pnpm format",
     "prepare": "husky"
   },
   "devDependencies": {
@@ -69,7 +68,6 @@
     "husky": "^9.1.7",
     "knip": "^5.83.0",
     "lint-staged": "^16.2.7",
-    "packlint": "^0.2.4",
     "react": "^19.2.4",
     "tsup": "^8.5.1",
     "typescript": "^5.9.3"
